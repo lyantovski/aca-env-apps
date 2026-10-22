@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" fill="none" role="img" aria-labelledby="banner-title banner-description">
+  <title id="banner-title">Pocket Tasks - Small tasks. Clear mind.</title>
+  <desc id="banner-description">A purple and teal banner with a task-list illustration. React, Express, PostgreSQL, and Microsoft Entra ID power a single-container Azure Container Apps demo.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1280" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19152E"/>
+      <stop offset="0.56" stop-color="#34265B"/>
+      <stop offset="1" stop-color="#234C52"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="66" y1="76" x2="126" y2="136" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B9A8FF"/>
+      <stop offset="1" stop-color="#7561D8"/>
+    </linearGradient>
+    <linearGradient id="card" x1="798" y1="57" x2="1200" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="400" rx="24" fill="url(#background)"/>
+  <g stroke="#D8D0FF" stroke-opacity="0.08">
+    <circle cx="1156" cy="66" r="228"/>
+    <circle cx="1156" cy="66" r="293"/>
+    <circle cx="1156" cy="66" r="358"/>
+    <path d="M744 400 1144 0M864 400 1264 0"/>
+  </g>
+  <circle cx="1251" cy="369" r="130" fill="#76E0C0" fill-opacity="0.06"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <rect x="60" y="44" width="249" height="29" rx="14.5" fill="#BCA8FF" fill-opacity="0.12" stroke="#BCA8FF" stroke-opacity="0.25"/>
+    <circle cx="77" cy="58.5" r="3.5" fill="#79D8BE"/>
+    <text x="91" y="63" fill="#D8CCFF" font-size="11" font-weight="700" letter-spacing="1.7">AZURE CONTAINER APPS DEMO</text>
+
+    <rect x="60" y="104" width="62" height="62" rx="18" fill="url(#accent)"/>
+    <path d="m75 135 10 10 23-24m-13 26 13-13" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="140" y="154" fill="#FFFFFF" font-size="56" font-weight="700" letter-spacing="-2">Pocket<tspan fill="#C8BCE7" font-weight="300"> Tasks</tspan></text>
+    <text x="60" y="220" fill="#FFFFFF" font-size="30" font-weight="600" letter-spacing="-0.7">Small tasks. Clear mind.</text>
+    <text x="60" y="256" fill="#C5BBD9" font-size="19">Your private workspace. One container. A little possibility.</text>
+
+    <g font-size="13" font-weight="600">
+      <rect x="60" y="304" width="92" height="34" rx="9" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.12"/>
+      <text x="106" y="326" fill="#E5DCF8" text-anchor="middle">React</text>
+      <rect x="163" y="304" width="110" height="34" rx="9" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.12"/>
+      <text x="218" y="326" fill="#E5DCF8" text-anchor="middle">Express</text>
+      <rect x="284" y="304" width="136" height="34" rx="9" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.12"/>
+      <text x="352" y="326" fill="#E5DCF8" text-anchor="middle">PostgreSQL 17</text>
+      <rect x="431" y="304" width="118" height="34" rx="9" fill="#79D8BE" fill-opacity="0.1" stroke="#79D8BE" stroke-opacity="0.3"/>
+      <text x="490" y="326" fill="#A6EAD7" text-anchor="middle">Entra ID</text>
+    </g>
+    <text x="60" y="370" fill="#A89ABD" font-size="12" letter-spacing="0.3">ONE APP / FRONTEND + BACKEND + DATABASE</text>
+
+    <rect x="790" y="50" width="430" height="300" rx="22" fill="#121424" fill-opacity="0.2"/>
+    <rect x="780" y="40" width="430" height="300" rx="22" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.19"/>
+    <path d="M780 104H1210" stroke="#FFFFFF" stroke-opacity="0.12"/>
+    <rect x="804" y="61" width="26" height="26" rx="8" fill="#B9A8FF"/>
+    <path d="m811 74 5 5 8-10" stroke="#2A2144" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="841" y="80" fill="#F3EEFF" font-size="15" font-weight="600">My little workspace</text>
+    <circle cx="1174" cy="74" r="16" fill="#C4B2F3" fill-opacity="0.2"/>
+    <circle cx="1174" cy="71" r="4.5" stroke="#E3D7FF" stroke-width="1.6"/>
+    <path d="M1166 83c1-8 15-8 16 0" stroke="#E3D7FF" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="1186" cy="85" r="4" fill="#79D8BE" stroke="#34344A" stroke-width="2"/>
+
+    <text x="806" y="138" fill="#C6B9E5" font-size="10" font-weight="700" letter-spacing="1.8">A LITTLE FOCUS GOES A LONG WAY</text>
+    <g font-size="16">
+      <rect x="802" y="159" width="386" height="43" rx="10" fill="#FFFFFF" fill-opacity="0.06"/>
+      <rect x="816" y="172" width="17" height="17" rx="5" fill="#79D8BE"/>
+      <path d="m821 180 3 3 5-6" stroke="#23463F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="847" y="186" fill="#C4C3D1" text-decoration="line-through">Make room for good ideas</text>
+      <rect x="802" y="212" width="386" height="43" rx="10" fill="#FFFFFF" fill-opacity="0.04"/>
+      <rect x="816" y="225" width="17" height="17" rx="5" stroke="#C9B5F5" stroke-opacity="0.65"/>
+      <text x="847" y="239" fill="#F2EDFB">Build something small</text>
+      <rect x="802" y="265" width="386" height="43" rx="10" fill="#FFFFFF" fill-opacity="0.04"/>
+      <rect x="816" y="278" width="17" height="17" rx="5" stroke="#C9B5F5" stroke-opacity="0.65"/>
+      <text x="847" y="292" fill="#F2EDFB">Celebrate the little wins</text>
+    </g>
+    <text x="1010" y="372" fill="#A6EAD7" text-anchor="middle" font-size="13" letter-spacing="0.5">PROGRESS, NOT PERFECTION.</text>
+  </g>
+</svg>

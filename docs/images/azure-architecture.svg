@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1100" viewBox="0 0 1280 1100" fill="none" role="img" aria-labelledby="architecture-title architecture-description">
+  <title id="architecture-title">Pocket Tasks Azure architecture</title>
+  <desc id="architecture-description">The browser signs in with Microsoft Entra ID using OpenID Connect and PKCE, and reaches Azure Container Apps over HTTPS. An Azure Container Apps Consumption environment hosts one Container App replica with one Linux container. Express serves React frontend assets and the API, and accesses PostgreSQL 17 through a private Unix socket. A user-assigned managed identity with registry-scoped AcrPull permission allows the app to pull its image from Azure Container Registry. PostgreSQL stores disposable tasks and sessions inside the container, not in a separate managed database.</desc>
+  <defs>
+    <linearGradient id="environment" x1="75" y1="420" x2="865" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F1FF"/>
+      <stop offset="1" stop-color="#F0FAF8"/>
+    </linearGradient>
+    <marker id="runtime-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#7561D8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="identity-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#397DAD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="delivery-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="m1 1 8 4-8 4" fill="none" stroke="#27866F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="1278" height="1098" rx="24" fill="#FAFAFD" stroke="#E6E2EF"/>
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <text x="50" y="65" fill="#2A2241" font-size="36" font-weight="700" letter-spacing="-1">One app. One container.</text>
+    <text x="50" y="99" fill="#777187" font-size="18">Azure hosting, Microsoft sign-in, and a private in-container database.</text>
+
+    <rect x="70" y="155" width="320" height="130" rx="18" fill="white" stroke="#DDD5EF" stroke-width="2"/>
+    <rect x="93" y="181" width="44" height="34" rx="6" fill="#F0EBFC" stroke="#A18DD4" stroke-width="1.5"/>
+    <path d="M93 191h44m-37-5h1m5 0h1m5 0h1" stroke="#7561D8" stroke-width="2" stroke-linecap="round"/>
+    <text x="151" y="202" fill="#2A2241" font-size="23" font-weight="650">Web browser</text>
+    <text x="94" y="252" fill="#777187" font-size="17">React UI + same-origin API calls</text>
+
+    <rect x="840" y="155" width="350" height="130" rx="18" fill="#F0F7FC" stroke="#B7D3E8" stroke-width="2"/>
+    <path d="m865 197 17-14 17 14-17 23-17-23Z" fill="#397DAD" fill-opacity="0.14" stroke="#397DAD" stroke-width="1.7" stroke-linejoin="round"/>
+    <text x="914" y="202" fill="#264B68" font-size="23" font-weight="650">Microsoft Entra ID</text>
+    <text x="864" y="252" fill="#5F7B91" font-size="17">App registration + work-account sign-in</text>
+    <path d="M401 215H829" stroke="#397DAD" stroke-width="2" marker-start="url(#identity-arrow)" marker-end="url(#identity-arrow)"/>
+    <rect x="473" y="181" width="282" height="27" rx="13" fill="#FAFAFD"/>
+    <text x="614" y="200" fill="#397DAD" text-anchor="middle" font-size="17" font-weight="600">Sign-in / OIDC + PKCE</text>
+
+    <rect x="45" y="365" width="1190" height="605" rx="22" fill="#FFFFFF" stroke="#DAD5E6" stroke-width="2"/>
+    <rect x="900" y="350" width="300" height="30" rx="10" fill="#FAFAFD"/>
+    <text x="920" y="372" fill="#777187" font-size="16" font-weight="600" letter-spacing="0.4">AZURE RESOURCE GROUP</text>
+
+    <rect x="75" y="420" width="790" height="500" rx="20" fill="url(#environment)" stroke="#C3B4E8" stroke-width="2"/>
+    <text x="100" y="459" fill="#594482" font-size="24" font-weight="650">Azure Container Apps environment</text>
+    <text x="100" y="487" fill="#8B7AA5" font-size="16">Consumption workload profile</text>
+
+    <rect x="100" y="515" width="740" height="355" rx="17" fill="#FFFFFF" stroke="#A28BCF" stroke-width="2"/>
+    <text x="125" y="555" fill="#44325F" font-size="25" font-weight="650">Azure Container App</text>
+    <rect x="692" y="534" width="122" height="30" rx="15" fill="#F0EBFC"/>
+    <text x="753" y="554" fill="#7561D8" text-anchor="middle" font-size="14" font-weight="600">1 replica</text>
+
+    <rect x="125" y="591" width="690" height="250" rx="14" fill="#FAF9FD" stroke="#DDD5EB" stroke-dasharray="6 5"/>
+    <path d="m147 615 9-5 9 5v11l-9 5-9-5v-11Zm0 0 9 5 9-5m-9 5v11" stroke="#8E78B5" stroke-width="1.4" stroke-linejoin="round"/>
+    <text x="176" y="629" fill="#6C588B" font-size="18" font-weight="650">Single Linux container</text>
+
+    <rect x="145" y="660" width="190" height="112" rx="12" fill="#F1ECFC" stroke="#D4C7EF"/>
+    <path d="M165 680h25v20h-25v-20Zm0 6h25" stroke="#8C73C0" stroke-width="1.5" stroke-linejoin="round"/>
+    <text x="164" y="727" fill="#574079" font-size="21" font-weight="650">React assets</text>
+    <text x="164" y="753" fill="#8B7AA5" font-size="15">Built frontend files</text>
+
+    <rect x="370" y="660" width="190" height="112" rx="12" fill="#EEE9FB" stroke="#C8B8E7"/>
+    <path d="m397 680-8 7 8 7m12-14 8 7-8 7" stroke="#7561D8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="389" y="727" fill="#574079" font-size="21" font-weight="650">Express API</text>
+    <text x="389" y="753" fill="#8B7AA5" font-size="15">Node.js / port 8080</text>
+
+    <rect x="595" y="660" width="200" height="112" rx="12" fill="#EAF7F2" stroke="#B2DCCA"/>
+    <ellipse cx="627" cy="682" rx="13" ry="5" stroke="#37876E" stroke-width="1.5"/>
+    <path d="M614 682v17c0 7 26 7 26 0v-17m-26 9c0 7 26 7 26 0" stroke="#37876E" stroke-width="1.5"/>
+    <text x="614" y="727" fill="#2E705C" font-size="21" font-weight="650">PostgreSQL 17</text>
+    <text x="614" y="753" fill="#5D917F" font-size="15">Private Unix socket</text>
+
+    <path d="M365 716H341" stroke="#7561D8" stroke-width="1.7" marker-end="url(#runtime-arrow)"/>
+    <path d="M565 716H589" stroke="#7561D8" stroke-width="1.7" marker-end="url(#runtime-arrow)"/>
+    <text x="145" y="808" fill="#8B7AA5" font-size="15">Express serves the UI and API; PostgreSQL holds tasks and sessions.</text>
+    <text x="100" y="899" fill="#6F7D80" font-size="16">JSON console logs / tini + bash supervision / no public database port</text>
+
+    <rect x="915" y="420" width="285" height="165" rx="16" fill="#EFF8F5" stroke="#C2DFD4" stroke-width="2"/>
+    <path d="m941 446 13-7 13 7v16l-13 7-13-7v-16Zm0 0 13 7 13-7m-13 7v16" stroke="#37876E" stroke-width="1.6" stroke-linejoin="round"/>
+    <text x="940" y="502" fill="#2E705C" font-size="24" font-weight="650">Azure Container</text>
+    <text x="940" y="531" fill="#2E705C" font-size="24" font-weight="650">Registry</text>
+    <text x="940" y="563" fill="#6F9689" font-size="16">Private application image</text>
+
+    <rect x="915" y="725" width="285" height="145" rx="16" fill="#F7F4FC" stroke="#D9CEE9" stroke-width="2"/>
+    <path d="M942 750h22v13c0 9-11 14-11 14s-11-5-11-14v-13Z" stroke="#8C73C0" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="m948 761 4 4 7-8" stroke="#8C73C0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="940" y="810" fill="#6C588B" font-size="23" font-weight="650">Managed identity</text>
+    <text x="940" y="842" fill="#8B7AA5" font-size="16">User-assigned / registry access</text>
+
+    <path d="M230 291V410" stroke="#7561D8" stroke-width="2.3" marker-end="url(#runtime-arrow)"/>
+    <text x="247" y="326" fill="#7561D8" font-size="18" font-weight="600">HTTPS</text>
+    <text x="247" y="348" fill="#8B7AA5" font-size="15">Ingress forwards to port 8080</text>
+
+    <path d="M832 251H715V505" stroke="#397DAD" stroke-width="2" marker-start="url(#identity-arrow)" marker-end="url(#identity-arrow)"/>
+    <text x="735" y="316" fill="#397DAD" font-size="17" font-weight="600">Code exchange</text>
+    <text x="735" y="339" fill="#6E8FA6" font-size="15">MSAL / server-side</text>
+
+    <path d="M909 511H886V568H850" stroke="#27866F" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#delivery-arrow)"/>
+    <text x="889" y="611" fill="#27866F" text-anchor="middle" font-size="16">Image pull</text>
+    <path d="M1057 715V595" stroke="#27866F" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#delivery-arrow)"/>
+    <text x="1074" y="660" fill="#27866F" font-size="17" font-weight="600">AcrPull</text>
+    <path d="M909 791H850" stroke="#8C73C0" stroke-width="1.8" stroke-dasharray="5 5" marker-end="url(#runtime-arrow)"/>
+    <text x="880" y="825" fill="#8C73C0" text-anchor="middle" font-size="14">Assigned</text>
+
+    <rect x="70" y="999" width="1130" height="70" rx="14" fill="#FFF6E9" stroke="#EBD6B2"/>
+    <text x="91" y="1029" fill="#956B31" font-size="16" font-weight="700">DEMO DATA ONLY</text>
+    <text x="266" y="1029" fill="#8D7A5E" font-size="17">Embedded PostgreSQL is disposable, not a separate managed database.</text>
+    <text x="266" y="1053" fill="#8D7A5E" font-size="16">Container replacement resets tasks and sessions. React executes in the browser.</text>
+  </g>
+</svg>
